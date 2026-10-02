@@ -1,0 +1,67 @@
+{
+  "source": "Chest.png supplied by user; flat sheet derived using built-in image_gen",
+  "sheet": "chest-sheet.png",
+  "size": [
+    1774,
+    887
+  ],
+  "grid": [
+    4,
+    2
+  ],
+  "tileResolution": [
+    16,
+    16
+  ],
+  "sampling": "nearest-neighbor",
+  "tiles": [
+    {
+      "name": "user_chest_top",
+      "file": "../block/user_chest_top.png",
+      "column": 0,
+      "row": 0
+    },
+    {
+      "name": "user_chest_front",
+      "file": "../block/user_chest_front.png",
+      "column": 1,
+      "row": 0
+    },
+    {
+      "name": "user_chest_right",
+      "file": "../block/user_chest_right.png",
+      "column": 2,
+      "row": 0
+    },
+    {
+      "name": "user_chest_back",
+      "file": "../block/user_chest_back.png",
+      "column": 3,
+      "row": 0
+    },
+    {
+      "name": "user_chest_bottom",
+      "file": "../block/user_chest_bottom.png",
+      "column": 0,
+      "row": 1
+    },
+    {
+      "name": "user_chest_left",
+      "file": "../block/user_chest_left.png",
+      "column": 1,
+      "row": 1
+    },
+    {
+      "name": "user_chest_lock_front",
+      "file": "../block/user_chest_lock_front.png",
+      "column": 2,
+      "row": 1
+    },
+    {
+      "name": "user_chest_lock_side",
+      "file": "../block/user_chest_lock_side.png",
+      "column": 3,
+      "row": 1
+    }
+  ]
+}

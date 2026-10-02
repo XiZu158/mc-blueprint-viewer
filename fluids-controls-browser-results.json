@@ -1,0 +1,14 @@
+{
+  "checks": [
+    "offline real gzip sample: 72 control states mounted on supports, separate lever texture/base, unknown block hidden by default",
+    "missing-texture switch persists through reset/reload; exact inventory and coordinate inspector retain the hidden block",
+    "actual top/front/bottom control views and bilingual setting label",
+    "actual water/lava animations and smooth varying levels, bubble columns, stacked water, chunk 32 and negative-size Region joins",
+    "layer/clipping rebuild retains full inventory; JSON export works",
+    "external genuine SimpleHouse still loads with exact 78-block inventory",
+    "production preview also loads the liquid fixture"
+  ],
+  "errors": [],
+  "offlineNetworkRequests": [],
+  "date": "2026-10-02T13:36:14.931Z"
+}

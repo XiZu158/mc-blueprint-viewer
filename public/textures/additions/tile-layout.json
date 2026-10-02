@@ -1,0 +1,84 @@
+[
+  {
+    "file": "honey-sheet.png",
+    "prefix": "user_honey",
+    "names": [
+      "top",
+      "front",
+      "right",
+      "back",
+      "bottom",
+      "left",
+      "inner"
+    ],
+    "size": [
+      1774,
+      887
+    ],
+    "crop": [
+      0,
+      0,
+      1774,
+      887
+    ],
+    "grid": [
+      4,
+      2
+    ],
+    "resolution": 16,
+    "sampling": "nearest"
+  },
+  {
+    "file": "composter-sheet.png",
+    "prefix": "user_composter",
+    "names": [
+      "top",
+      "front",
+      "right",
+      "back",
+      "bottom",
+      "left",
+      "inner",
+      "floor"
+    ],
+    "size": [
+      1774,
+      887
+    ],
+    "crop": [
+      0,
+      0,
+      1774,
+      887
+    ],
+    "grid": [
+      4,
+      2
+    ],
+    "resolution": 16,
+    "sampling": "nearest"
+  },
+  {
+    "file": "reference-Item_Frame.png",
+    "prefix": "user_item_frame",
+    "names": [
+      "front"
+    ],
+    "size": [
+      1024,
+      1024
+    ],
+    "crop": [
+      64,
+      128,
+      896,
+      832
+    ],
+    "grid": [
+      1,
+      1
+    ],
+    "resolution": 16,
+    "sampling": "nearest"
+  }
+]

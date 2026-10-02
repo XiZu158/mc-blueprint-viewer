@@ -1,0 +1,40 @@
+{
+  "name": "mc-blueprint-viewer",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite --configLoader native --host 127.0.0.1",
+    "build": "tsc --noEmit && vite build --configLoader native && node scripts/standalone.mjs",
+    "preview": "vite preview --configLoader native --host 127.0.0.1",
+    "test": "node scripts/run.mjs test",
+    "fixtures": "node scripts/run.mjs fixtures",
+    "benchmark": "node scripts/run.mjs benchmark",
+    "test:browser": "node tests/browser.mjs",
+    "test:textures": "node tests/texture-browser.mjs",
+    "fixtures:textures": "node scripts/run.mjs texturefixtures",
+    "fixtures:pistons": "node scripts/run.mjs pistonfixtures",
+    "test:pistons": "node tests/piston-browser.mjs",
+    "fixtures:partials": "node scripts/run.mjs partialfixtures",
+    "test:partials": "node tests/partial-browser.mjs",
+    "fixtures:chests": "node scripts/run.mjs chestfixtures",
+    "test:chests": "node tests/chest-browser.mjs",
+    "fixtures:additions": "node scripts/run.mjs additionsfixtures",
+    "test:additions": "node tests/additions-browser.mjs",
+    "fixtures:lights": "node scripts/run.mjs lightfixtures",
+    "test:lights": "node tests/lights-browser.mjs"
+  },
+  "dependencies": {
+    "three": "0.180.0"
+  },
+  "devDependencies": {
+    "@types/three": "0.180.0",
+    "@types/node": "^24.0.0",
+    "typescript": "~5.9.3",
+    "vite": "^7.1.7",
+    "esbuild": "^0.28.2",
+    "@playwright/test": "^1.55.1",
+    "rollup": "^4.63.6"
+  },
+  "license": "GPL-3.0-only"
+}

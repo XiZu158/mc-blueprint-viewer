@@ -1,0 +1,23 @@
+{
+  "urlScheme": "file://",
+  "demoBlocks": 5126,
+  "externalFixtures": [
+    "Lite",
+    "SimpleHouse"
+  ],
+  "largeBlocks": 2097152,
+  "checks": [
+    "embedded real gzip demo",
+    "real local file loading",
+    "Worker Blob execution",
+    "2M-block input",
+    "highlight",
+    "Y layer",
+    "JSON export",
+    "reload demo",
+    "zero HTTP(S) network access"
+  ],
+  "errors": [],
+  "networkRequests": [],
+  "date": "2026-10-02T06:00:18.884Z"
+}

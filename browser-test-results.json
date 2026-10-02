@@ -1,0 +1,23 @@
+{
+  "checks": [
+    "real gzip .litematic demo uses merged chunks",
+    "projection, standard views and all five render modes",
+    "material search, sorting, hide, isolate and highlight keep exact totals",
+    "Y layer, clipping and Region visibility rebuild in worker",
+    "CSV, JSON, TXT exports contain exact complete counts and screenshot is a PNG",
+    "independently authored Lite file: 4 regions, negative Y and exact 122-block inventory",
+    "Inspector reports exact source coordinate, region and palette state",
+    "click picking selects a rendered source block",
+    "cross-long, multiple regions and negative xyz fixture loads",
+    "invalid files show an error, and subsequent valid files still load",
+    {
+      "largeFileLoadMs": 782,
+      "ticks": 39,
+      "maxGapMs": 22.399999998509884
+    },
+    "2,097,152-block file loads with main-thread animation alive"
+  ],
+  "errors": [],
+  "externalNetworkRequests": [],
+  "date": "2026-10-02T06:53:31.490Z"
+}

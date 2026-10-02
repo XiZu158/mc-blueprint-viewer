@@ -1,0 +1,38 @@
+{
+  "runtime": "v24.21.0",
+  "platform": "win32",
+  "date": "2026-10-01T12:50:33.296Z",
+  "scenario": "Fully solid stone volume. Greedy best case; complex builds produce more geometry.",
+  "results": [
+    {
+      "dimensions": [
+        128,
+        128,
+        128
+      ],
+      "volume": 2097152,
+      "blocks": 2097152,
+      "gzipBytes": 936,
+      "parseMs": 29.3,
+      "meshMs": 364.3,
+      "chunks": 56,
+      "triangles": 192,
+      "geometryBytes": 29952
+    },
+    {
+      "dimensions": [
+        256,
+        256,
+        256
+      ],
+      "volume": 16777216,
+      "blocks": 16777216,
+      "gzipBytes": 4511,
+      "parseMs": 203.1,
+      "meshMs": 2803.7,
+      "chunks": 296,
+      "triangles": 768,
+      "geometryBytes": 119808
+    }
+  ]
+}

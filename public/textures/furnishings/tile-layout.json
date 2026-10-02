@@ -1,0 +1,63 @@
+[
+  {
+    "file": "ender-sheet.png",
+    "prefix": "user_ender",
+    "names": [
+      "top",
+      "front",
+      "right",
+      "back",
+      "bottom",
+      "left",
+      "lock_front",
+      "lock_side"
+    ],
+    "resolution": 16,
+    "grid": [
+      4,
+      2
+    ],
+    "sampling": "nearest; binary alpha at 128; latch samples gold interior"
+  },
+  {
+    "file": "scaffold-sign-sheet.png",
+    "prefix": "user_scaffold",
+    "names": [
+      "top",
+      "front",
+      "right",
+      "back",
+      "bottom",
+      "left"
+    ],
+    "resolution": 16,
+    "grid": [
+      4,
+      2
+    ],
+    "sampling": "nearest; binary alpha at 128; latch samples gold interior"
+  },
+  {
+    "file": "reference-Spruce_Sign.png",
+    "names": [
+      "board",
+      "post"
+    ],
+    "bounds": [
+      [
+        128,
+        128,
+        832,
+        576
+      ],
+      [
+        448,
+        704,
+        192,
+        320
+      ]
+    ],
+    "resolution": 16,
+    "sampling": "nearest"
+  }
+]

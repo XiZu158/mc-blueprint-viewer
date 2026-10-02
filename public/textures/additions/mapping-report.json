@@ -1,0 +1,347 @@
+{
+  "file": "additions-gallery.litematic",
+  "blocks": 721,
+  "entities": 13,
+  "blockInventory": [
+    {
+      "name": "minecraft:stone",
+      "count": 685,
+      "states": [
+        1
+      ]
+    },
+    {
+      "name": "minecraft:composter",
+      "count": 9,
+      "states": [
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ]
+    },
+    {
+      "name": "minecraft:bubble_column",
+      "count": 8,
+      "states": [
+        17,
+        18
+      ]
+    },
+    {
+      "name": "minecraft:honey_block",
+      "count": 6,
+      "states": [
+        11
+      ]
+    },
+    {
+      "name": "minecraft:water",
+      "count": 4,
+      "states": [
+        19
+      ]
+    },
+    {
+      "name": "minecraft:white_wool",
+      "count": 2,
+      "states": [
+        12
+      ]
+    },
+    {
+      "name": "minecraft:red_wool",
+      "count": 1,
+      "states": [
+        13
+      ]
+    },
+    {
+      "name": "minecraft:blue_wool",
+      "count": 1,
+      "states": [
+        14
+      ]
+    },
+    {
+      "name": "minecraft:lime_wool",
+      "count": 1,
+      "states": [
+        15
+      ]
+    },
+    {
+      "name": "minecraft:purple_wool",
+      "count": 1,
+      "states": [
+        16
+      ]
+    },
+    {
+      "name": "minecraft:glass",
+      "count": 1,
+      "states": [
+        20
+      ]
+    },
+    {
+      "name": "minecraft:chest",
+      "count": 1,
+      "states": [
+        21
+      ]
+    },
+    {
+      "name": "minecraft:fixture_missing",
+      "count": 1,
+      "states": [
+        22
+      ]
+    }
+  ],
+  "entityInventory": [
+    {
+      "name": "minecraft:item_frame",
+      "count": 7,
+      "states": [
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        35
+      ]
+    },
+    {
+      "name": "minecraft:glow_item_frame",
+      "count": 6,
+      "states": [
+        29,
+        30,
+        31,
+        32,
+        33,
+        34
+      ]
+    }
+  ],
+  "missingTextures": [
+    {
+      "state": "minecraft:fixture_missing",
+      "faces": [
+        "west",
+        "east",
+        "down",
+        "up",
+        "north",
+        "south"
+      ],
+      "requested": [
+        "fixture_missing"
+      ]
+    }
+  ],
+  "framePositions": [
+    {
+      "position": [
+        3.5,
+        2.96875,
+        16.5
+      ],
+      "anchor": [
+        3,
+        2,
+        16
+      ],
+      "state": 23,
+      "item": "minecraft:diamond",
+      "rotation": 0
+    },
+    {
+      "position": [
+        7.5,
+        2.03125,
+        16.5
+      ],
+      "anchor": [
+        7,
+        2,
+        16
+      ],
+      "state": 24,
+      "item": "minecraft:diamond",
+      "rotation": 1
+    },
+    {
+      "position": [
+        11.5,
+        2.5,
+        16.96875
+      ],
+      "anchor": [
+        11,
+        2,
+        16
+      ],
+      "state": 25,
+      "item": "minecraft:diamond",
+      "rotation": 2
+    },
+    {
+      "position": [
+        15.5,
+        2.5,
+        16.03125
+      ],
+      "anchor": [
+        15,
+        2,
+        16
+      ],
+      "state": 26,
+      "item": "minecraft:diamond",
+      "rotation": 3
+    },
+    {
+      "position": [
+        19.96875,
+        2.5,
+        16.5
+      ],
+      "anchor": [
+        19,
+        2,
+        16
+      ],
+      "state": 27,
+      "item": "minecraft:diamond",
+      "rotation": 4
+    },
+    {
+      "position": [
+        23.03125,
+        2.5,
+        16.5
+      ],
+      "anchor": [
+        23,
+        2,
+        16
+      ],
+      "state": 28,
+      "item": "minecraft:diamond",
+      "rotation": 5
+    },
+    {
+      "position": [
+        3.5,
+        2.96875,
+        20.5
+      ],
+      "anchor": [
+        3,
+        2,
+        20
+      ],
+      "state": 29,
+      "item": "minecraft:diamond",
+      "rotation": 0
+    },
+    {
+      "position": [
+        7.5,
+        2.03125,
+        20.5
+      ],
+      "anchor": [
+        7,
+        2,
+        20
+      ],
+      "state": 30,
+      "item": "minecraft:diamond",
+      "rotation": 1
+    },
+    {
+      "position": [
+        11.5,
+        2.5,
+        20.96875
+      ],
+      "anchor": [
+        11,
+        2,
+        20
+      ],
+      "state": 31,
+      "item": "minecraft:diamond",
+      "rotation": 2
+    },
+    {
+      "position": [
+        15.5,
+        2.5,
+        20.03125
+      ],
+      "anchor": [
+        15,
+        2,
+        20
+      ],
+      "state": 32,
+      "item": "minecraft:diamond",
+      "rotation": 3
+    },
+    {
+      "position": [
+        19.96875,
+        2.5,
+        20.5
+      ],
+      "anchor": [
+        19,
+        2,
+        20
+      ],
+      "state": 33,
+      "item": "minecraft:diamond",
+      "rotation": 4
+    },
+    {
+      "position": [
+        23.03125,
+        2.5,
+        20.5
+      ],
+      "anchor": [
+        23,
+        2,
+        20
+      ],
+      "state": 34,
+      "item": "minecraft:diamond",
+      "rotation": 5
+    },
+    {
+      "position": [
+        43.5,
+        3.5,
+        -13.03125
+      ],
+      "anchor": [
+        43,
+        3,
+        -14
+      ],
+      "state": 35,
+      "item": "",
+      "rotation": 0
+    }
+  ]
+}

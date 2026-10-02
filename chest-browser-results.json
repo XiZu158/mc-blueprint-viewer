@@ -1,0 +1,10 @@
+{
+  "url": "http://127.0.0.1:4180",
+  "checks": [
+    "supplied Chest.png derived six-face artwork + separate metal clasp: four facings, single/double and trapped chest, zero missing resources",
+    "all six sides actually rendered after hiding ground; inventory preserved",
+    "offline embedded atlas and updated chest UV model render real binary fixture"
+  ],
+  "errors": [],
+  "date": "2026-10-02T06:50:47.170Z"
+}

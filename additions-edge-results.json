@@ -1,0 +1,17 @@
+{
+  "url": "http://127.0.0.1:4180",
+  "checks": [
+    "real two-region binary: exact 721 blocks + 13 separately counted entities, all custom faces, inner walls, fill surfaces and water resources used",
+    "material icons are cached atlas-derived 32px PNGs, including six-face blocks, water and visible missing material",
+    "UI, material names, hints, attributes and help switch both ways; bilingual search and saved preference survive reload",
+    "Inspector locates negative-size region frame at source Pos and shows held-item ID",
+    "entity isolation, Region visibility and Y filtering rebuild Worker chunks without changing block/entity inventory",
+    "actual all-six-view renders and every material mode compile without shader errors",
+    "JSON/CSV/TXT contain accurate separate entity inventory; complete block totals remain exact",
+    "207-block detail fixture with three frames: larger actual hollow/transparent/face render views; zero missing resources",
+    "file:// offline atlas, local entity NBT, language switch and texture icons work with HTTP disabled"
+  ],
+  "errors": [],
+  "external": [],
+  "date": "2026-10-02T05:58:37.892Z"
+}

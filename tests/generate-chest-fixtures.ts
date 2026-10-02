@@ -1,0 +1,8 @@
+import {writeFileSync} from 'node:fs';import {fixture,type FixtureRegion} from './fixture';import {parseLitematic} from '../src/core/litematic';import {modelFor} from '../src/core/models';import {textureDiagnostics} from '../src/core/textures';
+const w=24,h=4,d=22,palette:FixtureRegion['palette']=[{name:'minecraft:air'},{name:'minecraft:stone'}],values=Array(w*h*d).fill(0),directions=['north','east','south','west'];
+const joined:Record<string,[number,number]>={north:[1,0],east:[0,1],south:[-1,0],west:[0,-1]};
+for(let z=0;z<d;z++)for(let x=0;x<w;x++)values[x+z*w]=1;
+const put=(x:number,z:number,name:string,props:Record<string,string>)=>{if(values[x+z*w+w*d])throw Error('Chest fixture overlap');values[x+z*w+w*d]=palette.length;palette.push({name:'minecraft:'+name,props});};
+for(let row=0;row<4;row++)directions.forEach((facing,i)=>{const x=3+6*i,z=3+5*row,name=row>=2?'trapped_chest':'chest';if(row%2===0)put(x,z,name,{facing,type:'single'});else{const [dx,dz]=joined[facing];put(x,z,name,{facing,type:'left'});put(x+dx,z+dz,name,{facing,type:'right'});}});
+const bytes=fixture([{name:'Chest Gallery',position:[-12,0,-11],size:[w,h,d],palette,values}],true,'Chest Gallery');writeFileSync('public/fixtures/chest-gallery.litematic',bytes);
+const s=await parseLitematic(bytes.buffer.slice(bytes.byteOffset,bytes.byteOffset+bytes.length) as ArrayBuffer);writeFileSync('public/textures/chest/mapping-report.json',JSON.stringify({file:'chest-gallery.litematic',totalBlocks:s.totalBlocks,missingTextures:textureDiagnostics(s.states),states:s.states.filter(s=>s.name.endsWith('chest')).map(s=>({state:s.key,boxes:modelFor(s).boxes,quads:modelFor(s).quads}))},null,2));console.log({blocks:s.totalBlocks,missing:textureDiagnostics(s.states).length});

@@ -1,0 +1,13 @@
+{
+  "url": "http://127.0.0.1:4180",
+  "checks": [
+    "six directions, normal/sticky heads, short/full rods, extended/retracted bases, anvils; zero missing textures",
+    "actual detail views show open rod space and thin head plates",
+    "isolation rebuild retains complete exact inventory",
+    "Y layer rebuild retains exact inventory",
+    "all render modes compile without shader errors",
+    "offline file:// updated geometry and pack textures work"
+  ],
+  "errors": [],
+  "date": "2026-10-02T06:50:47.933Z"
+}

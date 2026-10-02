@@ -1,0 +1,11 @@
+{
+  "checks": [
+    "real gzip fixture: 356 blocks, all 16 carpets, four Ender Chest directions, scaffolds, sign variants and animated fire; zero missing textures",
+    "actual above/below/front/back views, clear scaffold cutouts, thin carpets, oriented Ender Chest and sign geometry",
+    "fire animation changes actual rendered pixels; material isolation preserves 356-block inventory",
+    "existing partial-block sample still works; Ender Chest now has zero missing resources; local icons and bilingual search work"
+  ],
+  "errors": [],
+  "network": [],
+  "date": "2026-10-02T13:10:42.536Z"
+}

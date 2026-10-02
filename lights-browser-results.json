@@ -1,0 +1,21 @@
+{
+  "url": "http://127.0.0.1:4180",
+  "checks": [
+    "actual textured grass logo, crafting table, chest and inventory-slot icons render locally",
+    "48 real BlockStates, 579 exact blocks; ordinary/soul/copper/redstone, four wall directions, hanging and standing lanterns, axis chains; no missing textures",
+    "actual WebGL readback: 613 colors, warm flames and cyan soul lighting",
+    "all six actual detail views, support hidden to inspect angled stems, UV cap crops, cutout handles and hooks",
+    "lantern isolation and Y slicing retain complete inventory, use merged Worker geometry",
+    "all five modes render new geometry without shader failures",
+    "1920/1440 desktop, 900 tablet, 390 mobile: no horizontal overflow, canvas and open/language controls remain usable",
+    "Vite development server loads identical supplied textures and lighting fixture",
+    "file:// single-file build renders the lighting fixture and embedded UI assets with every HTTP request blocked"
+  ],
+  "pixels": {
+    "colors": 613,
+    "warm": 85,
+    "cold": 74
+  },
+  "errors": [],
+  "date": "2026-10-02T06:49:24.353Z"
+}

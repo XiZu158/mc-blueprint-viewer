@@ -1,0 +1,21 @@
+import {writeFileSync} from 'node:fs';
+import {fixture,type FixtureRegion} from './fixture';
+const states:FixtureRegion['palette']=[];
+const add=(name:string,props:Record<string,string>={})=>states.push({name:'minecraft:'+name,props});
+for(const n of ['torch','soul_torch','copper_torch'])add(n);
+for(const lit of ['true','false'])add('redstone_torch',{lit});
+for(const n of ['wall_torch','soul_wall_torch','copper_wall_torch','redstone_wall_torch'])for(const facing of ['north','east','south','west'])for(const lit of n==='redstone_wall_torch'?['true','false']:['true'])add(n,{facing,...(n==='redstone_wall_torch'?{lit}:{})});
+for(const n of ['lantern','soul_lantern','copper_lantern','exposed_copper_lantern','weathered_copper_lantern','oxidized_copper_lantern','waxed_copper_lantern'])for(const hanging of ['false','true'])add(n,{hanging});
+for(const n of ['chain','iron_chain','copper_chain'])for(const axis of ['x','y','z'])add(n,{axis});
+const w=24,d=21,h=4,values=Array(w*h*d).fill(0),palette=[{name:'minecraft:air'},{name:'minecraft:stone_bricks'},...states];
+for(let z=0;z<d;z++)for(let x=0;x<w;x++)values[x+z*w]=1;
+states.forEach((s,i)=>{const x=1+i%8*3,z=1+Math.floor(i/8)*3;values[x+z*w+w*d]=i+2;
+ if(s.name.includes('wall_torch')){const [dx,dz]=({north:[0,1],east:[-1,0],south:[0,-1],west:[1,0]} as Record<string,number[]>)[s.props!.facing];values[x+dx+(z+dz)*w+w*d]=1;}
+ if(s.props?.hanging==='true')values[x+z*w+2*w*d]=1;
+});
+writeFileSync('public/fixtures/light-gallery.litematic',fixture([{name:'Light Gallery',position:[-12,0,-10],size:[w,h,d],palette,values}],true,'火把与灯笼 · Torch & Lantern Gallery'));
+const detail=states.filter(s=>['torch','soul_torch','redstone_torch','lantern','soul_lantern'].includes(s.name.slice(10))||s.name==='minecraft:wall_torch'||s.name==='minecraft:soul_wall_torch');
+const a=18,b=12,v=Array(a*4*b).fill(0);for(let z=0;z<b;z++)for(let x=0;x<a;x++)v[x+z*a]=1;
+detail.forEach((s,i)=>{const x=1+i%6*3,z=1+Math.floor(i/6)*3;v[x+z*a+a*b]=i+2;if(s.name.includes('wall_torch')){const [dx,dz]=({north:[0,1],east:[-1,0],south:[0,-1],west:[1,0]} as Record<string,number[]>)[s.props!.facing];v[x+dx+(z+dz)*a+a*b]=1;}if(s.props?.hanging==='true')v[x+z*a+2*a*b]=1;});
+writeFileSync('public/fixtures/light-detail.litematic',fixture([{name:'Light Detail',position:[-9,0,-6],size:[a,4,b],palette:[{name:'minecraft:air'},{name:'minecraft:stone_bricks'},...detail],values:v}],true,'火把与灯笼 · Detail'));
+console.log(`Generated ${states.length} lighting states plus a ${detail.length}-state detail fixture.`);

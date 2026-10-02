@@ -1,0 +1,21 @@
+{
+  "url": "http://127.0.0.1:4180",
+  "checks": [
+    "real Keep: supplied textures, exact totals and no missing textures",
+    "gallery: four facings, three axes, partial geometry, cutout, blend and explicit missing material",
+    "detail screenshots: model shape, image orientation and alpha inspection",
+    "water/lantern animation updates actual rendered pixels",
+    "external real SimpleHouse: 78 blocks, no missing textures",
+    "offline file:// includes atlas and renders real file with no source ZIP path"
+  ],
+  "errors": [],
+  "screenshots": [
+    "texture-keep.png",
+    "texture-gallery-iso.png",
+    "texture-gallery-top.png",
+    "texture-detail-iso.png",
+    "texture-detail-front.png",
+    "texture-real-house.png"
+  ],
+  "date": "2026-10-02T06:53:28.758Z"
+}

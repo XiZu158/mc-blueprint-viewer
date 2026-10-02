@@ -1,0 +1,13 @@
+{
+  "url": "http://127.0.0.1:5190",
+  "checks": [
+    "218 block-state combinations; only 4 ender chest entity states have explicitly missing textures",
+    "actual direction/UV/rail connection view",
+    "detail: repeater delay/locked, comparator mode, chest/double chest, hollow hopper, rails, wire, cake and cauldron",
+    "material isolation keeps complete inventory and missing diagnostics",
+    "Y layer and all five modes compile correctly",
+    "offline file:// loads actual partial-state litematic and embedded atlas"
+  ],
+  "errors": [],
+  "date": "2026-10-01T14:24:31.417Z"
+}

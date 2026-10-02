@@ -1,0 +1,21 @@
+import {chromium} from '@playwright/test';import assert from 'node:assert/strict';import {resolve} from 'node:path';import {pathToFileURL} from 'node:url';import {writeFileSync} from 'node:fs';
+const base=process.env.VIEWER_URL||'http://127.0.0.1:4180',errors=[],checks=[];
+const browser=await chromium.launch({executablePath:process.env.BROWSER_PATH||'C:/Program Files/Google/Chrome/Application/chrome.exe',headless:true,args:['--no-sandbox','--use-angle=swiftshader','--enable-unsafe-swiftshader']});
+try {
+ const page=await browser.newPage({viewport:{width:1920,height:1200}});page.on('pageerror',e=>errors.push(e.message));page.on('console',m=>{if(m.type()==='error')errors.push(m.text());});
+ async function ready(file){await page.waitForFunction(f=>window.__blueprint?.ready&&(!f||window.__blueprint.file===f),file,{timeout:120000});await page.waitForTimeout(200);return page.evaluate(()=>window.__blueprint);}
+ async function load(file){await page.locator('#file').setInputFiles(resolve('public/fixtures/'+file+'.litematic'));return ready(file+'.litematic');}
+ const entities=missing=>assert.ok(missing.every(m=>m.requested.every(n=>n.startsWith('entity/chest/'))));
+ await page.goto(base);await ready();const g=await load('partial-gallery');assert.equal(g.blocks,2378);assert.equal(g.textures.missing.length,0);entities(g.textures.missing);
+ for(const texture of ['repeater','repeater_on','comparator','comparator_on','redstone_torch','redstone_torch_off','smooth_stone','bedrock','hopper_inside','hopper_outside','hopper_top','rail','rail_corner','powered_rail_on','redstone_dust_dot','redstone_dust_line0','cake_inner','cauldron_inner','water_still','user_ender_front'])assert.ok(g.textures.used.includes(texture),texture);
+ assert.equal(g.materials.find(m=>m.name==='minecraft:repeater').count,64);assert.equal(g.materials.find(m=>m.name==='minecraft:comparator').count,16);await page.screenshot({path:'partial-gallery-iso.png'});checks.push('218 block-state combinations; all states including four Ender Chest directions have textures');
+ await page.locator('#orthographic').click();await page.locator('#view').selectOption('top');await page.waitForTimeout(300);await page.screenshot({path:'partial-gallery-top.png'});checks.push('actual direction/UV/rail connection view');
+ const d=await load('partial-detail');assert.equal(d.blocks,251);assert.equal(d.textures.missing.length,0);entities(d.textures.missing);await page.locator('#perspective').click();await page.locator('#fit').click();await page.waitForTimeout(300);await page.screenshot({path:'partial-detail-iso.png'});
+ await page.locator('#orthographic').click();await page.locator('#view').selectOption('top');await page.waitForTimeout(300);await page.screenshot({path:'partial-detail-top.png'});checks.push('detail: repeater delay/locked, comparator mode, chest/double chest, hollow hopper, rails, wire, cake and cauldron');
+ await page.locator('#search').fill('repeater');await page.locator('[data-action="isolate"]').click();await page.waitForTimeout(400);const isolated=await ready();assert.equal(isolated.blocks,251);assert.ok(isolated.mesh.triangles<d.mesh.triangles);assert.deepEqual(isolated.textures.missing,d.textures.missing);checks.push('material isolation keeps complete inventory and missing diagnostics');
+ await page.locator('#clear-materials').click();await page.waitForTimeout(400);await ready();await page.locator('#layer-mode').selectOption('single');await page.waitForTimeout(400);assert.equal((await ready()).blocks,251);
+ for(const mode of ['Blueprint','X-Ray','Wireframe','Solid','Normal'])await page.locator(`[data-mode="${mode}"]`).click();await page.waitForTimeout(150);checks.push('Y layer and all five modes compile correctly');
+ await page.goto(pathToFileURL(resolve('MC-Blueprint-Viewer.html')).href);await ready();assert.equal((await load('partial-detail')).blocks,251);entities((await page.evaluate(()=>window.__blueprint.textures)).missing);checks.push('offline file:// loads actual partial-state litematic and embedded atlas');
+ assert.deepEqual(errors,[]);writeFileSync('partial-browser-results.json',JSON.stringify({url:base,checks,errors,date:new Date().toISOString()},null,2));console.log(checks.map(c=>'PASS '+c).join('\n'));
+}finally{await browser.close();}
+
